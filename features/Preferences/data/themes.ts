@@ -714,6 +714,12 @@ const baseThemeSets: BaseThemeGroup[] = [
        mainColor:       'oklch(86.5% 0.135 331.0 / 1)',  
        secondaryColor:  'oklch(72.0% 0.070 320.0 / 1)', 
       },
+      {
+      id: 'kyoto-lanterns',
+      backgroundColor: 'oklch(22.10% 0.0310 265.00 / 1)', 
+      mainColor:        'oklch(78.90% 0.1820 50.00 / 1)',     
+      secondaryColor:   'oklch(84.20% 0.1200 90.00 / 1)',     
+      },
     ]
   },
   {

@@ -120,14 +120,6 @@ const AchievementNotification = ({
               </div>
             </div>
           </div>
-
-          {/* Progress bar animation */}
-          <motion.div
-            initial={{ width: '100%' }}
-            animate={{ width: '0%' }}
-            transition={{ duration: 8, ease: 'linear' }}
-            className='absolute bottom-0 left-0 h-1 rounded-b-lg bg-yellow-500'
-          />
         </motion.div>
       )}
     </AnimatePresence>

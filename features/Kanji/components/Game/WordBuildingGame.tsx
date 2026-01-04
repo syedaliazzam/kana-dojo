@@ -277,14 +277,14 @@ const KanjiWordBuildingGame = ({
   }, [isReverse, selectedKanjiObjs, distractorCount, kanjiObjMap]);
 
   const [questionData, setQuestionData] = useState(() => generateQuestion());
-  const [selectedTile, setSelectedTile] = useState<string | null>(null);
+  const [placedTiles, setPlacedTiles] = useState<string[]>([]);
   const [isChecking, setIsChecking] = useState(false);
   const [isCelebrating, setIsCelebrating] = useState(false);
 
   const resetGame = useCallback(() => {
     const newQuestion = generateQuestion();
     setQuestionData(newQuestion);
-    setSelectedTile(null);
+    setPlacedTiles([]);
     setIsChecking(false);
     setIsCelebrating(false);
     setBottomBarState('check');
@@ -322,7 +322,7 @@ const KanjiWordBuildingGame = ({
 
   // Handle Check button
   const handleCheck = useCallback(() => {
-    if (!selectedTile) return;
+    if (placedTiles.length === 0) return;
 
     // Stop timing and record answer time
     speedStopwatch.pause();
@@ -331,7 +331,9 @@ const KanjiWordBuildingGame = ({
     playClick();
     setIsChecking(true);
 
-    const isCorrect = selectedTile === questionData.correctAnswer;
+    // Correct if exactly one tile placed and it matches the correct answer
+    const isCorrect =
+      placedTiles.length === 1 && placedTiles[0] === questionData.correctAnswer;
 
     if (isCorrect) {
       // Record answer time for speed achievements
@@ -382,7 +384,7 @@ const KanjiWordBuildingGame = ({
       externalOnWrong?.();
     }
   }, [
-    selectedTile,
+    placedTiles,
     questionData,
     playClick,
     playCorrect,
@@ -416,21 +418,21 @@ const KanjiWordBuildingGame = ({
   // Handle Try Again button (for wrong answers)
   const handleTryAgain = useCallback(() => {
     playClick();
-    setSelectedTile(null);
+    setPlacedTiles([]);
     setIsChecking(false);
     setBottomBarState('check');
     speedStopwatch.reset();
     speedStopwatch.start();
   }, [playClick]);
 
-  // Handle tile click - select a tile
+  // Handle tile click - add or remove from placed tiles
   const handleTileClick = useCallback(
     (char: string) => {
       if (isChecking && bottomBarState !== 'wrong') return;
 
       playClick();
 
-      // If in wrong state, reset to check state
+      // If in wrong state, reset to check state and continue with normal tile logic
       if (bottomBarState === 'wrong') {
         setIsChecking(false);
         setBottomBarState('check');
@@ -438,14 +440,14 @@ const KanjiWordBuildingGame = ({
         speedStopwatch.start();
       }
 
-      // Toggle selection
-      if (selectedTile === char) {
-        setSelectedTile(null);
+      // Toggle tile in placed tiles array
+      if (placedTiles.includes(char)) {
+        setPlacedTiles(prev => prev.filter(c => c !== char));
       } else {
-        setSelectedTile(char);
+        setPlacedTiles(prev => [...prev, char]);
       }
     },
-    [isChecking, bottomBarState, selectedTile, playClick]
+    [isChecking, bottomBarState, placedTiles, playClick]
   );
 
   // Not enough characters
@@ -453,7 +455,7 @@ const KanjiWordBuildingGame = ({
     return null;
   }
 
-  const canCheck = selectedTile !== null && !isChecking;
+  const canCheck = placedTiles.length > 0 && !isChecking;
   const showContinue = bottomBarState === 'correct';
   const showTryAgain = bottomBarState === 'wrong';
 
@@ -499,7 +501,7 @@ const KanjiWordBuildingGame = ({
         </motion.div>
       </div>
 
-      {/* Answer Row Area - shows selected tile */}
+      {/* Answer Row Area - shows placed tiles */}
       <div className='flex w-full flex-col items-center'>
         <div className='flex min-h-[5rem] w-full items-center justify-center border-b-2 border-[var(--border-color)] px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2'>
           <motion.div
@@ -508,16 +510,17 @@ const KanjiWordBuildingGame = ({
             initial='idle'
             animate={isCelebrating ? 'celebrate' : 'idle'}
           >
-            {selectedTile && (
+            {placedTiles.map(char => (
               <ActiveTile
-                id={`tile-${selectedTile}`}
-                char={selectedTile}
-                reading={isReverse ? getKanjiReading(selectedTile) : undefined}
-                onClick={() => handleTileClick(selectedTile)}
+                key={`placed-${char}`}
+                id={`tile-${char}`}
+                char={char}
+                reading={isReverse ? getKanjiReading(char) : undefined}
+                onClick={() => handleTileClick(char)}
                 isDisabled={isChecking && bottomBarState !== 'wrong'}
                 isKanji={isReverse}
               />
-            )}
+            ))}
           </motion.div>
         </div>
       </div>
@@ -529,7 +532,7 @@ const KanjiWordBuildingGame = ({
         const bottomRowTiles = questionData.allTiles.slice(tilesPerRow);
 
         const renderTile = (char: string) => {
-          const isSelected = selectedTile === char;
+          const isPlaced = placedTiles.includes(char);
           const isKanjiTile = isReverse;
 
           return (
@@ -545,8 +548,8 @@ const KanjiWordBuildingGame = ({
                 reading={isKanjiTile ? getKanjiReading(char) : undefined}
               />
 
-              {/* Active tile on top when NOT selected */}
-              {!isSelected && (
+              {/* Active tile on top when NOT placed */}
+              {!isPlaced && (
                 <div className='absolute inset-0 z-10'>
                   <ActiveTile
                     id={`tile-${char}`}

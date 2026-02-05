@@ -149,7 +149,18 @@ const Themes = () => {
       {themeSets.map((themeSet, i) => (
         <CollapsibleSection
           key={i}
-          title={themeSet.name}
+          title={
+            themeSet.name === 'Premium (experimental, unstable)' ? (
+              <span>
+                <span className='text-(--main-color)'>Premium</span>
+                <span className='text-(--secondary-color)'>
+                  (experimental, unstable)
+                </span>
+              </span>
+            ) : (
+              themeSet.name
+            )
+          }
           icon={createElement(themeSet.icon, { size: 18 })}
           level='subsubsection'
           defaultOpen={true}

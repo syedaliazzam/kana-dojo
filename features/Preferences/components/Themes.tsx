@@ -285,7 +285,7 @@ const Themes = () => {
                       isPremiumThemeId(currentTheme.id) && 'invisible',
                     )}
                   >
-                    <span
+                    {/* <span
                       className={clsx(
                         'absolute left-1/2 -translate-x-1/2',
                         currentTheme.id === selectedTheme
@@ -294,7 +294,7 @@ const Themes = () => {
                       )}
                     >
                       {'\u2B24'}
-                    </span>
+                    </span> */}
                     <span className='opacity-0'>?</span>
                   </span>
                 ) : (
@@ -304,9 +304,9 @@ const Themes = () => {
                       isPremiumThemeId(currentTheme.id) && 'invisible',
                     )}
                   >
-                    <span className='text-(--secondary-color)'>
+                    {/* <span className='text-(--secondary-color)'>
                       {currentTheme.id === selectedTheme ? '\u2B24 ' : ''}
-                    </span>
+                    </span> */}
                     {currentTheme.id === 'long'
                       ? 'long loooooooong theme'
                       : currentTheme.id.split('-').map((themeNamePart, i) => (

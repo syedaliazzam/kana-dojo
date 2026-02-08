@@ -113,12 +113,12 @@ const ThemeCard = memo(function ThemeCard({
       <div className={`mb-2 ${isPremiumTheme ? 'invisible' : ''}`}>
         {isChaosTheme ? (
           <span className='relative flex items-center justify-center text-sm text-white capitalize'>
-            <span
+            {/* <span
               className='absolute left-1/2 -translate-x-1/2'
               style={{ color: isSelected ? '#000' : 'transparent' }}
             >
               {'\u2B24'}
-            </span>
+            </span> */}
             <span className='opacity-0'>?</span>
           </span>
         ) : (
@@ -126,7 +126,7 @@ const ThemeCard = memo(function ThemeCard({
             className='text-sm capitalize'
             style={{ color: theme.mainColor }}
           >
-            {isSelected && '\u2B24 '}
+            {/* {isSelected && '\u2B24 '} */}
             {themeName}
           </span>
         )}

@@ -49,9 +49,9 @@ const Fonts = () => {
         className='hidden'
       />
       <p className={clsx('text-center text-xl', fontObj.font.className)}>
-        <span className='text-(--secondary-color)'>
+        {/* <span className='text-(--secondary-color)'>
           {fontObj.name === currentFont ? '\u2B24 ' : ''}
-        </span>
+        </span> */}
         <span className=''>{fontObj.name}</span>
         {fontObj.name === 'Zen Maru Gothic' && ' (default)'}
         <span className='ml-2 text-(--secondary-color)'>かな道場</span>

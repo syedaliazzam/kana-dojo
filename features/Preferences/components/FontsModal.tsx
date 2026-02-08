@@ -40,9 +40,9 @@ const FontCard = memo(function FontCard({
       onClick={() => onClick(fontName)}
     >
       <p className={clsx('text-center text-xl', fontClassName)}>
-        <span className='text-(--secondary-color)'>
+        {/* <span className='text-(--secondary-color)'>
           {isSelected ? '\u2B24 ' : ''}
-        </span>
+        </span> */}
         <span className='text-(--main-color)'>
           {fontName}
           {isDefault && ' (default)'}

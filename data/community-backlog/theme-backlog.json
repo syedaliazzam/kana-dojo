@@ -78,7 +78,9 @@
     "mainColor": "oklch(78.0% 0.225 330.0 / 1)",
     "secondaryColor": "oklch(82.0% 0.180 200.0 / 1)",
     "issued": true,
-    "completed": false
+    "completed": true,
+    "completedBy": "ZammadNasir",
+    "completedPR": 4625
   },
   {
     "id": "zen-stone",

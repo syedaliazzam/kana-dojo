@@ -376,6 +376,12 @@
     "backgroundColor": "oklch(21.0% 0.052 30.0 / 1)",
     "mainColor": "oklch(72.0% 0.200 35.0 / 1)",
     "secondaryColor": "oklch(80.0% 0.165 60.0 / 1)"
+  },
+  {
+    "id": "ghost-parade",
+    "backgroundColor": "oklch(15.0% 0.045 310.0 / 1)",
+    "mainColor": "oklch(88.0% 0.065 285.0 / 1)",
+    "secondaryColor": "oklch(70.0% 0.145 340.0 / 1)"
   }
 
 ]

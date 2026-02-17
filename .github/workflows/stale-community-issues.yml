@@ -177,7 +177,7 @@ jobs:
                     repo: context.repo.repo,
                     issue_number: issue.number,
                     state: 'closed',
-                    state_reason: 'not_planned'
+                    state_reason: 'completed'
                   });
                 } else {
                   // Leave unassigned issues quiet until auto-close to avoid noisy bot comments
@@ -207,7 +207,7 @@ jobs:
                   repo: context.repo.repo,
                   issue_number: issue.number,
                   state: 'closed',
-                  state_reason: 'not_planned'
+                  state_reason: 'completed'
                 });
 
                 reenableBacklogItem(issue.title, 'assigned-stale-close');

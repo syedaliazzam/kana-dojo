@@ -908,14 +908,7 @@ jobs:
               issueTitle = addTitleAdjectives(issueTitle, tmpl.adjectives);
 
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
-              const codeBlock = `\`\`\`json
-{
-  "termA": "${item.termA}",
-  "termB": "${item.termB}",
-  "explanation": "${item.explanation}",
-  "example": "${item.example}"
-}
-\`\`\``;
+              const codeBlock = `\`\`\`json\n{\n  "termA": "${item.termA}",\n  "termB": "${item.termB}",\n  "explanation": "${item.explanation}",\n  "example": "${item.example}"\n}\n\`\`\``;
 
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.falseFriendHeader}\n\n**Term A:** ${item.termA}  \n**Term B:** ${item.termB}\n\n> **Explanation:** ${item.explanation}\n> **Example:** ${item.example}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 5).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(5).join('\n')}\n\n---\n\n${common.footer}`;
 
@@ -970,14 +963,7 @@ jobs:
               issueTitle = addTitleAdjectives(issueTitle, tmpl.adjectives);
 
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
-              const codeBlock = `\`\`\`json
-{
-  "situation": "${item.situation}",
-  "do": "${item.do}",
-  "dont": "${item.dont}",
-  "note": "${item.note}"
-}
-\`\`\``;
+              const codeBlock = `\`\`\`json\n{\n  "situation": "${item.situation}",\n  "do": "${item.do}",\n  "dont": "${item.dont}",\n  "note": "${item.note}"\n}\n\`\`\``;
 
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.etiquetteHeader}\n\n**Situation:** ${item.situation}\n\n- Do: ${item.do}\n- Avoid: ${item.dont}\n\n> **Note:** ${item.note}\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 5).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(5).join('\n')}\n\n---\n\n${common.footer}`;
 
@@ -1032,14 +1018,7 @@ jobs:
               issueTitle = addTitleAdjectives(issueTitle, tmpl.adjectives);
 
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
-              const codeBlock = `\`\`\`json
-{
-  "japanese": "${item.japanese}",
-  "romaji": "${item.romaji}",
-  "english": "${item.english}",
-  "jlpt": "${item.jlpt}"
-}
-\`\`\``;
+              const codeBlock = `\`\`\`json\n{\n  "japanese": "${item.japanese}",\n  "romaji": "${item.romaji}",\n  "english": "${item.english}",\n  "jlpt": "${item.jlpt}"\n}\n\`\`\``;
 
               issueBody = `${tmpl.header}\n\n**Category:** ${tmpl.category}  \n**Difficulty:** ${common.difficulty}  \n**Estimated Time:** ${tmpl.estimatedTime}\n\n---\n\n### Your Task\n\n${tmpl.taskDescription}\n\n${tmpl.sentenceHeader}\n\n| Japanese | Romaji | English | JLPT |\n|----------|--------|---------|------|\n| **${item.japanese}** | ${item.romaji} | ${item.english} | ${item.jlpt} |\n\n${common.instructionsHeader}\n\n${instructions.slice(0, 5).join('\n')}\n\n${codeBlock}\n\n${instructions.slice(5).join('\n')}\n\n---\n\n${common.footer}`;
 
@@ -1094,13 +1073,7 @@ jobs:
               issueTitle = addTitleAdjectives(issueTitle, tmpl.adjectives);
 
               const instructions = t.buildInstructions(tmpl.file, tmpl.itemType, tmpl.prTitle).map((instr, i) => `${i + 1}. ${instr.replace(/{id}/g, item.id)}`);
-              const codeBlock = `\`\`\`json
-{
-  "wrong": "${item.wrong}",
-  "correct": "${item.correct}",
-  "explanation": "${item.explanation}"
-}
-\`\`\``;
+              const codeBlock = `\`\`\`json\n{\n  "wrong": "${item.wrong}",\n  "correct": "${item.correct}",\n  "explanation": "${item.explanation}"\n}\n\`\`\``;
 
               issueBody = `${tmpl.header}
 

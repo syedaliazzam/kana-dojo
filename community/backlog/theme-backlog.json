@@ -1237,7 +1237,9 @@
     "mainColor": "oklch(60.0% 0.130 215.0 / 1)",
     "secondaryColor": "oklch(85.0% 0.155 95.0 / 1)",
     "issued": true,
-    "completed": false
+    "completed": true,
+    "completedBy": "Toffeeek",
+    "completedPR": 5633
   },
   {
     "id": "neon-arcade",

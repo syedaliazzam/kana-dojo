@@ -26,6 +26,16 @@ export const mainLinks = {
     text: 'Kana',
     title: 'Learn Hiragana and Katakana',
   },
+  kanaHiragana: {
+    href: '/kana/learn-hiragana',
+    text: 'Learn Hiragana',
+    title: 'Learn Hiragana with Interactive Practice',
+  },
+  kanaKatakana: {
+    href: '/kana/learn-katakana',
+    text: 'Learn Katakana',
+    title: 'Learn Katakana with Interactive Practice',
+  },
   kanji: {
     href: '/kanji',
     text: 'Kanji',
@@ -279,6 +289,8 @@ export function getRelatedLinks(currentPath: string): InternalLink[] {
   // Kana-related pages
   if (currentPath.includes('kana') || currentPath.includes('hiragana')) {
     related.push(
+      mainLinks.kanaHiragana,
+      mainLinks.kanaKatakana,
       learningLinks.hiraganaPractice,
       learningLinks.katakanaPractice,
       learningLinks.kanaBlitz,

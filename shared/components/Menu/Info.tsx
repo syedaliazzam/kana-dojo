@@ -16,11 +16,13 @@ const Info = () => {
 
   // Remove locale from pathname (e.g., /en/kana -> /kana)
   const pathWithoutLocale = removeLocaleFromPath(pathname);
-  const normalizedPath = pathWithoutLocale.startsWith('/kanji/')
-    ? '/kanji'
-    : pathWithoutLocale.startsWith('/vocabulary/')
-      ? '/vocabulary'
-      : pathWithoutLocale;
+  const normalizedPath = pathWithoutLocale.startsWith('/kana/')
+    ? '/kana'
+    : pathWithoutLocale.startsWith('/kanji/')
+      ? '/kanji'
+      : pathWithoutLocale.startsWith('/vocabulary/')
+        ? '/vocabulary'
+        : pathWithoutLocale;
 
   // Get translations object, passing the translation function
   const translations = translationGen(t);

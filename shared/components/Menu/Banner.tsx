@@ -6,7 +6,7 @@ import { removeLocaleFromPath } from '@/shared/lib/pathUtils';
 const Banner = () => {
   const pathname = usePathname();
   const pathWithoutLocale = removeLocaleFromPath(pathname);
-  const isKanaRoute = pathWithoutLocale === '/kana';
+  const isKanaRoute = pathWithoutLocale.startsWith('/kana');
   const isKanjiRoute = pathWithoutLocale.startsWith('/kanji');
   const isVocabRoute = pathWithoutLocale.startsWith('/vocabulary');
   const isPreferencesRoute = pathWithoutLocale === '/preferences';

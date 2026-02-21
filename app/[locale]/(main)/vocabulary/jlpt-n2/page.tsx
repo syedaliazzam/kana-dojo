@@ -7,12 +7,10 @@ import { FAQSchema, commonKanaDOJOFAQs } from '@/shared/components/SEO/FAQSchema
 import { LearningResourceSchema } from '@/shared/components/SEO/LearningResourceSchema';
 import { routing } from '@/core/i18n/routing';
 
-// Generate static pages for all locales at build time
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
 }
 
-// ISR: Revalidate every hour
 export const revalidate = 3600;
 
 export async function generateMetadata({
@@ -21,13 +19,13 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  return await generatePageMetadata('vocabulary', {
+  return await generatePageMetadata('vocabularyJlptN2', {
     locale,
-    pathname: '/vocabulary',
+    pathname: '/vocabulary/jlpt-n2',
   });
 }
 
-export default async function VocabularyPage({
+export default async function VocabularyJlptN2Page({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -39,39 +37,37 @@ export default async function VocabularyPage({
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: `https://kanadojo.com/${locale}` },
-          {
-            name: 'Vocabulary',
-            url: `https://kanadojo.com/${locale}/vocabulary`,
-          },
+          { name: 'Vocabulary', url: `https://kanadojo.com/${locale}/vocabulary` },
+          { name: 'JLPT N2', url: `https://kanadojo.com/${locale}/vocabulary/jlpt-n2` },
         ]}
       />
       <CourseSchema
-        name='Japanese Vocabulary Building Course by JLPT Level (N5-N1)'
-        description='Build your Japanese vocabulary with thousands of words organized by JLPT levels. Learn nouns, verbs, adjectives, and adverbs with readings, meanings, and interactive practice from beginner to advanced.'
-        url={`https://kanadojo.com/${locale}/vocabulary`}
-        educationalLevel='Beginner to Advanced'
-        skillLevel='All Levels'
-        learningResourceType='Interactive Course, Exercise and Games'
+        name='JLPT N2 Japanese Vocabulary Course'
+        description='Practice JLPT N2 Japanese vocabulary with interactive level sets. Train word recognition, meanings, and reading recall with fast feedback and progress tracking.'
+        url={`https://kanadojo.com/${locale}/vocabulary/jlpt-n2`}
+        educationalLevel='Upper Intermediate'
+        skillLevel='JLPT N2'
+        learningResourceType='Interactive Course'
       />
       <LearningResourceSchema
-        name='Japanese Vocabulary Quiz and JLPT Word Practice'
-        description='Build your Japanese vocabulary with thousands of words organized by JLPT levels N5 through N1. Practice readings, meanings, and usage with interactive drills and quick set selection.'
-        url={`https://kanadojo.com/${locale}/vocabulary`}
+        name='JLPT N2 Vocabulary Practice'
+        description='Targeted JLPT N2 vocabulary drills with selectable sets, quick selection controls, and dictionary links for exam-focused Japanese study.'
+        url={`https://kanadojo.com/${locale}/vocabulary/jlpt-n2`}
         learningResourceType='Quiz, Interactive, Game'
-        educationalLevel={['Beginner', 'Intermediate', 'Advanced']}
-        teaches='Japanese vocabulary, word readings, meanings, and usage'
-        assesses='Vocabulary recognition, recall speed, and JLPT-level word knowledge'
-        timeRequired='PT45M'
+        educationalLevel={['Upper Intermediate']}
+        teaches='JLPT N2 Japanese vocabulary, meanings, and usage'
+        assesses='JLPT N2 word recognition and recall speed'
+        timeRequired='PT35M'
         isAccessibleForFree={true}
         provider={{ name: 'KanaDojo', url: 'https://kanadojo.com' }}
         educationalAlignment={{
           alignmentType: 'educationalLevel',
           educationalFramework: 'JLPT',
-          targetName: 'N5-N1',
+          targetName: 'N2',
         }}
       />
       <FAQSchema faqs={commonKanaDOJOFAQs} />
-      <VocabMenu />
+      <VocabMenu fixedCollection='n2' hideUnitSelector />
     </>
   );
 }

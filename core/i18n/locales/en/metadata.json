@@ -87,8 +87,38 @@
   "vocabulary": {
     "title": "Vocabulary Dojo - Learn Japanese Words & Vocabulary by JLPT Level",
     "titleShort": "Vocabulary Dojo - Learn Japanese Words",
-    "description": "Expand your Japanese vocabulary with words organized by JLPT levels. Interactive exercises, example sentences, and progress tracking.",
-    "keywords": "japanese vocabulary 2025, learn japanese words online, JLPT vocabulary 2025, vocabulary practice app, japanese word list, vocabulary flashcards online, japanese phrases, JLPT word study, vocabulary by level, japanese vocabulary app, common japanese words, essential japanese vocabulary, japanese words for beginners, JLPT N5 vocabulary, JLPT N4 vocabulary, JLPT N3 vocabulary, japanese vocabulary builder, learn japanese vocabulary fast, japanese word meanings, japanese vocabulary quiz, japanese phrases with english, everyday japanese vocabulary, japanese vocabulary with audio"
+    "description": "Build Japanese vocabulary by JLPT level with interactive set drills, quizzes, and fast review. Practice meanings, readings, and usage from N5 to N1.",
+    "keywords": "learn japanese vocabulary, jlpt vocabulary, vocabulary by level, jlpt n5 vocabulary, jlpt n4 vocabulary, jlpt n3 vocabulary, jlpt n2 vocabulary, jlpt n1 vocabulary, japanese words list, japanese vocabulary quiz, vocabulary practice online, japanese vocabulary flashcards, japanese word meanings, beginner japanese vocabulary, advanced japanese vocabulary"
+  },
+  "vocabularyJlptN5": {
+    "title": "JLPT N5 Vocabulary List and Practice - Learn Beginner Japanese Words | KanaDojo",
+    "titleShort": "JLPT N5 Vocabulary Practice",
+    "description": "Practice JLPT N5 vocabulary with interactive level sets and quick drills. Improve beginner word recognition, meanings, and reading recall.",
+    "keywords": "jlpt n5 vocabulary, n5 word list, beginner japanese vocabulary, n5 vocabulary practice, learn n5 japanese words, n5 vocab quiz, n5 vocabulary meanings"
+  },
+  "vocabularyJlptN4": {
+    "title": "JLPT N4 Vocabulary List and Practice - Intermediate Japanese Words | KanaDojo",
+    "titleShort": "JLPT N4 Vocabulary Practice",
+    "description": "Train JLPT N4 vocabulary with set-based quizzes and drills. Improve vocabulary recall speed, reading confidence, and meaning accuracy.",
+    "keywords": "jlpt n4 vocabulary, n4 word list, n4 vocabulary practice, learn n4 japanese words, n4 vocab quiz, n4 vocabulary meanings"
+  },
+  "vocabularyJlptN3": {
+    "title": "JLPT N3 Vocabulary List and Practice - Intermediate Japanese Study | KanaDojo",
+    "titleShort": "JLPT N3 Vocabulary Practice",
+    "description": "Study JLPT N3 vocabulary with focused drills and quick set selection. Build stronger mid-level Japanese word recognition and retention.",
+    "keywords": "jlpt n3 vocabulary, n3 word list, n3 vocabulary practice, learn n3 japanese words, n3 vocab quiz, n3 vocabulary meanings"
+  },
+  "vocabularyJlptN2": {
+    "title": "JLPT N2 Vocabulary List and Practice - Advanced Japanese Words | KanaDojo",
+    "titleShort": "JLPT N2 Vocabulary Practice",
+    "description": "Practice JLPT N2 vocabulary with advanced interactive drills and set review. Improve higher-level Japanese word recall and usage recognition.",
+    "keywords": "jlpt n2 vocabulary, n2 word list, n2 vocabulary practice, learn n2 japanese words, n2 vocab quiz, n2 vocabulary meanings"
+  },
+  "vocabularyJlptN1": {
+    "title": "JLPT N1 Vocabulary List and Practice - Master Advanced Japanese Vocabulary | KanaDojo",
+    "titleShort": "JLPT N1 Vocabulary Practice",
+    "description": "Master JLPT N1 vocabulary with focused advanced drills, set practice, and quick review workflows for top-level Japanese exam preparation.",
+    "keywords": "jlpt n1 vocabulary, n1 word list, n1 vocabulary practice, learn n1 japanese words, n1 vocab quiz, n1 vocabulary meanings"
   },
   "vocabularyBlitz": {
     "title": "Vocabulary Blitz - Test Your Japanese Vocabulary Speed",

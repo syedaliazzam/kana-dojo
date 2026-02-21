@@ -18,7 +18,9 @@ const Info = () => {
   const pathWithoutLocale = removeLocaleFromPath(pathname);
   const normalizedPath = pathWithoutLocale.startsWith('/kanji/')
     ? '/kanji'
-    : pathWithoutLocale;
+    : pathWithoutLocale.startsWith('/vocabulary/')
+      ? '/vocabulary'
+      : pathWithoutLocale;
 
   // Get translations object, passing the translation function
   const translations = translationGen(t);

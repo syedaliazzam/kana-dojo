@@ -8,7 +8,7 @@ const Banner = () => {
   const pathWithoutLocale = removeLocaleFromPath(pathname);
   const isKanaRoute = pathWithoutLocale === '/kana';
   const isKanjiRoute = pathWithoutLocale.startsWith('/kanji');
-  const isVocabRoute = pathWithoutLocale === '/vocabulary';
+  const isVocabRoute = pathWithoutLocale.startsWith('/vocabulary');
   const isPreferencesRoute = pathWithoutLocale === '/preferences';
 
   const subheading =

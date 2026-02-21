@@ -7,12 +7,10 @@ import { FAQSchema, commonKanaDOJOFAQs } from '@/shared/components/SEO/FAQSchema
 import { LearningResourceSchema } from '@/shared/components/SEO/LearningResourceSchema';
 import { routing } from '@/core/i18n/routing';
 
-// Generate static pages for all locales at build time
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }));
 }
 
-// ISR: Revalidate every hour
 export const revalidate = 3600;
 
 export async function generateMetadata({
@@ -21,13 +19,13 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  return await generatePageMetadata('vocabulary', {
+  return await generatePageMetadata('vocabularyJlptN4', {
     locale,
-    pathname: '/vocabulary',
+    pathname: '/vocabulary/jlpt-n4',
   });
 }
 
-export default async function VocabularyPage({
+export default async function VocabularyJlptN4Page({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -39,39 +37,37 @@ export default async function VocabularyPage({
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: `https://kanadojo.com/${locale}` },
-          {
-            name: 'Vocabulary',
-            url: `https://kanadojo.com/${locale}/vocabulary`,
-          },
+          { name: 'Vocabulary', url: `https://kanadojo.com/${locale}/vocabulary` },
+          { name: 'JLPT N4', url: `https://kanadojo.com/${locale}/vocabulary/jlpt-n4` },
         ]}
       />
       <CourseSchema
-        name='Japanese Vocabulary Building Course by JLPT Level (N5-N1)'
-        description='Build your Japanese vocabulary with thousands of words organized by JLPT levels. Learn nouns, verbs, adjectives, and adverbs with readings, meanings, and interactive practice from beginner to advanced.'
-        url={`https://kanadojo.com/${locale}/vocabulary`}
-        educationalLevel='Beginner to Advanced'
-        skillLevel='All Levels'
-        learningResourceType='Interactive Course, Exercise and Games'
+        name='JLPT N4 Japanese Vocabulary Course'
+        description='Practice JLPT N4 Japanese vocabulary with interactive level sets. Train word recognition, meanings, and reading recall with fast feedback and progress tracking.'
+        url={`https://kanadojo.com/${locale}/vocabulary/jlpt-n4`}
+        educationalLevel='Beginner to Intermediate'
+        skillLevel='JLPT N4'
+        learningResourceType='Interactive Course'
       />
       <LearningResourceSchema
-        name='Japanese Vocabulary Quiz and JLPT Word Practice'
-        description='Build your Japanese vocabulary with thousands of words organized by JLPT levels N5 through N1. Practice readings, meanings, and usage with interactive drills and quick set selection.'
-        url={`https://kanadojo.com/${locale}/vocabulary`}
+        name='JLPT N4 Vocabulary Practice'
+        description='Targeted JLPT N4 vocabulary drills with selectable sets, quick selection controls, and dictionary links for exam-focused Japanese study.'
+        url={`https://kanadojo.com/${locale}/vocabulary/jlpt-n4`}
         learningResourceType='Quiz, Interactive, Game'
-        educationalLevel={['Beginner', 'Intermediate', 'Advanced']}
-        teaches='Japanese vocabulary, word readings, meanings, and usage'
-        assesses='Vocabulary recognition, recall speed, and JLPT-level word knowledge'
-        timeRequired='PT45M'
+        educationalLevel={['Beginner to Intermediate']}
+        teaches='JLPT N4 Japanese vocabulary, meanings, and usage'
+        assesses='JLPT N4 word recognition and recall speed'
+        timeRequired='PT25M'
         isAccessibleForFree={true}
         provider={{ name: 'KanaDojo', url: 'https://kanadojo.com' }}
         educationalAlignment={{
           alignmentType: 'educationalLevel',
           educationalFramework: 'JLPT',
-          targetName: 'N5-N1',
+          targetName: 'N4',
         }}
       />
       <FAQSchema faqs={commonKanaDOJOFAQs} />
-      <VocabMenu />
+      <VocabMenu fixedCollection='n4' hideUnitSelector />
     </>
   );
 }

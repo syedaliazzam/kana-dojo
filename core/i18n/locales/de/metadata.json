@@ -90,6 +90,36 @@
     "description": "Erweitern Sie Ihren japanischen Wortschatz mit Wörtern organisiert nach JLPT-Levels. Interaktive Übungen, Beispielsätze und Fortschrittsverfolgung.",
     "keywords": "japanische vokabeln, japanische wörter lernen, JLPT vokabeln, vokabel übung, japanische wortliste, vokabel karteikarten, japanische phrasen, JLPT wort studium, vokabeln nach level, japanische vokabel app"
   },
+  "vocabularyJlptN5": {
+    "title": "JLPT N5 Vokabeln - Liste und Übung | KanaDojo",
+    "titleShort": "JLPT N5 Vokabeln",
+    "description": "Üben Sie JLPT N5 Vokabeln mit interaktiven Übungen, schneller Auswahl und Fortschrittsverfolgung.",
+    "keywords": "jlpt n5 vokabeln, n5 wortliste, n5 vokabeln üben, japanisch n5 wörter"
+  },
+  "vocabularyJlptN4": {
+    "title": "JLPT N4 Vokabeln - Liste und Übung | KanaDojo",
+    "titleShort": "JLPT N4 Vokabeln",
+    "description": "Üben Sie JLPT N4 Vokabeln mit interaktiven Übungen, schneller Auswahl und Fortschrittsverfolgung.",
+    "keywords": "jlpt n4 vokabeln, n4 wortliste, n4 vokabeln üben, japanisch n4 wörter"
+  },
+  "vocabularyJlptN3": {
+    "title": "JLPT N3 Vokabeln - Liste und Übung | KanaDojo",
+    "titleShort": "JLPT N3 Vokabeln",
+    "description": "Üben Sie JLPT N3 Vokabeln mit interaktiven Übungen, schneller Auswahl und Fortschrittsverfolgung.",
+    "keywords": "jlpt n3 vokabeln, n3 wortliste, n3 vokabeln üben, japanisch n3 wörter"
+  },
+  "vocabularyJlptN2": {
+    "title": "JLPT N2 Vokabeln - Liste und Übung | KanaDojo",
+    "titleShort": "JLPT N2 Vokabeln",
+    "description": "Üben Sie JLPT N2 Vokabeln mit interaktiven Übungen, schneller Auswahl und Fortschrittsverfolgung.",
+    "keywords": "jlpt n2 vokabeln, n2 wortliste, n2 vokabeln üben, japanisch n2 wörter"
+  },
+  "vocabularyJlptN1": {
+    "title": "JLPT N1 Vokabeln - Liste und Übung | KanaDojo",
+    "titleShort": "JLPT N1 Vokabeln",
+    "description": "Üben Sie JLPT N1 Vokabeln mit interaktiven Übungen, schneller Auswahl und Fortschrittsverfolgung.",
+    "keywords": "jlpt n1 vokabeln, n1 wortliste, n1 vokabeln üben, japanisch n1 wörter"
+  },
   "vocabularyBlitz": {
     "title": "Vocabulary Blitz - Testen Sie Ihre Japanische Vokabelgeschwindigkeit",
     "titleShort": "Vocabulary Blitz",

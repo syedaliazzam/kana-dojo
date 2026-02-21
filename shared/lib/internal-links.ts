@@ -61,6 +61,31 @@ export const mainLinks = {
     text: 'Vocabulary',
     title: 'Learn Japanese Vocabulary',
   },
+  vocabularyN5: {
+    href: '/vocabulary/jlpt-n5',
+    text: 'JLPT N5 Vocabulary',
+    title: 'Practice JLPT N5 Vocabulary',
+  },
+  vocabularyN4: {
+    href: '/vocabulary/jlpt-n4',
+    text: 'JLPT N4 Vocabulary',
+    title: 'Practice JLPT N4 Vocabulary',
+  },
+  vocabularyN3: {
+    href: '/vocabulary/jlpt-n3',
+    text: 'JLPT N3 Vocabulary',
+    title: 'Practice JLPT N3 Vocabulary',
+  },
+  vocabularyN2: {
+    href: '/vocabulary/jlpt-n2',
+    text: 'JLPT N2 Vocabulary',
+    title: 'Practice JLPT N2 Vocabulary',
+  },
+  vocabularyN1: {
+    href: '/vocabulary/jlpt-n1',
+    text: 'JLPT N1 Vocabulary',
+    title: 'Practice JLPT N1 Vocabulary',
+  },
   translate: {
     href: '/translate',
     text: 'Translator',
@@ -275,7 +300,14 @@ export function getRelatedLinks(currentPath: string): InternalLink[] {
 
   // Vocabulary-related pages
   if (currentPath.includes('vocabulary') || currentPath.includes('vocab')) {
-    related.push(learningLinks.vocabularyBlitz, jlptLinks.n5, mainLinks.kanji);
+    related.push(
+      learningLinks.vocabularyBlitz,
+      mainLinks.vocabularyN5,
+      mainLinks.vocabularyN4,
+      mainLinks.vocabularyN3,
+      jlptLinks.n5,
+      mainLinks.kanji,
+    );
   }
 
   // JLPT-related pages

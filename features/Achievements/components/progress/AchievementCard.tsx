@@ -78,6 +78,7 @@ export const AchievementCard = ({
             <div
               className={clsx(
                 'flex h-16 w-16 items-center justify-center rounded-2xl text-2xl font-bold',
+                'border border-(--border-color)',
               )}
               style={
                 isUnlocked
@@ -146,12 +147,12 @@ export const AchievementCard = ({
           )}
 
           {/* Footer */}
-          <div className='flex items-center justify-between border-t border-(--border-color)/30 pt-2'>
+          <div className='flex items-center justify-between border-t-2 border-(--border-color)/30 pt-2'>
             <div className='flex items-center gap-2'>
               <Trophy
                 size={16}
                 className={
-                  isUnlocked ? 'text-yellow-500' : 'text-(--border-color)'
+                  isUnlocked ? 'text-(--secondary-color)' : 'text-(--border-color)'
                 }
               />
               <span
@@ -167,7 +168,7 @@ export const AchievementCard = ({
             </div>
 
             {isUnlocked && (
-              <div className='rounded-full bg-(--main-color) px-2 py-1 text-xs text-(--background-color)'>
+              <div className='rounded-full bg-(--secondary-color) px-2 py-1 text-xs text-(--background-color)'>
                 Unlocked
               </div>
             )}

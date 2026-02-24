@@ -63,8 +63,8 @@ export default function StreakProgress() {
           style={
             {
               '--streak-tabs-halo-gap': `${STREAK_TABS_HALO_GAP}px`,
-              '--streak-tabs-outer-radius': 'var(--radius-3xl)',
-              '--streak-tabs-shared-radius': 'var(--radius-2xl)',
+              '--streak-tabs-outer-radius': 'var(--radius-4xl)',
+              '--streak-tabs-shared-radius': 'var(--radius-3xl)',
               '--streak-tabs-inner-radius':
                 'calc(var(--streak-tabs-shared-radius) - var(--streak-tabs-halo-gap))',
             } as CSSProperties
